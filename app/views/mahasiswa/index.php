@@ -12,6 +12,22 @@
             <button type="button" class="btn btn-primary mb-3 addLabel" data-bs-toggle="modal" data-bs-target="#form">
                 Tambah Mahasiswa
             </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="<?= BASEURL;?>/mahasiswa/find" method="post">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Find student" autocomplete="off" name="keyword" id="keyword">
+                    <button class="btn btn-outline-primary" type="submit" id="findButton">Find</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>
             <ul class="list-group">
             <?php foreach ($data["mhs"] as $mhs) :?>
