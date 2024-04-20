@@ -1,7 +1,14 @@
 
 <div class="container mt-3">
+
     <div class="row">
-        <div class="col-6">
+        <div class="col-lg-6">
+            <?php Flasher::flash();  ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
             <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#form">
                 Tambah Mahasiswa
             </button>
@@ -36,13 +43,22 @@
                         <label for="nim" class="form-label">NIM</label>
                         <input type="text" class="form-control" id="nim" name="nim">
                     </div>
+
                     <div class="mb-3">
                         <label for="prodi" class="form-label">Program Studi</label>
-                        <input type="text" class="form-control" id="prodi" name="prodi">
+                        <select name="prodi" id="prodi" class="form-select">
+                            <option selected>Ilmu Komputer</option>
+                            <option value="1">Teknik Informatika</option>
+                            <option value="2">Sistem Informasi</option>
+                            <option value="3">Manajemen Informatika</option>
+                            <option value="4">Teknik Mesin</option>
+                            <option value="5">Teknik Elektro</option>
+                        </select>
                     </div>
+
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <label for="prodi" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="prodi" name="email">
                     </div>
 
                     <div class="modal-footer">
