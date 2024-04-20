@@ -7,7 +7,7 @@ class About extends Controller
         $data = ['name' => $name, 'job' => $job];
         $this->view('templates/header', ['title' => 'About']);
         $this->view('about/index', $data);
-        $this->view('templates/header');
+        $this->view('templates/footer');
     }
 
     public function page()
