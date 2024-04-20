@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-lg-6">
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#form">
+            <button type="button" class="btn btn-primary mb-3 addLabel" data-bs-toggle="modal" data-bs-target="#form">
                 Tambah Mahasiswa
             </button>
             <h3>Daftar Mahasiswa</h3>
@@ -19,6 +19,7 @@
                     <?= $mhs["nama"] ?>
                     <div>
                         <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs["id"]; ?>" class="btn btn-info">Detail</a>
+                        <a href="<?= BASEURL; ?>/mahasiswa/update/<?= $mhs["id"]; ?>" class="btn btn-warning ubahData" data-bs-toggle="modal" data-bs-target="#form" data-id="<?= $mhs["id"]; ?>">Update</a>
                         <a href="<?= BASEURL; ?>/mahasiswa/delete/<?= $mhs["id"]; ?>" class="btn btn-danger"
                             onclick="return confirmDelete(event, this.href)"
                         >Delete</a>
@@ -35,11 +36,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="add-data">Tambah Mahasiswa</h1>
+                <h1 class="modal-title fs-5" id="formLabel">Tambah Mahasiswa</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/mahasiswa/add" method="post" >
+                    <input type="hidden" name="id" id="id">
+
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">
@@ -63,7 +66,7 @@
 
                     <div class="mb-3">
                         <label for="prodi" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="prodi" name="email">
+                        <input type="email" class="form-control" id="email" name="email">
                     </div>
 
                     <div class="modal-footer">
